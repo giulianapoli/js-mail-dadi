@@ -1,14 +1,22 @@
 // creo un array
-var email = ["homerj.simpson@gmail.com", "ricksanchez@hotmail.it", "tedmosby@live.it", "johndorian@gmail.com", "thomashelby@hotmail.it", "walterwhite@gmail.com"];
+var archive = ["homerj.simpson@gmail.com", "ricksanchez@hotmail.it", "tedmosby@live.it", "johndorian@gmail.com", "thomashelby@hotmail.it", "walterwhite@gmail.com"];
 
 // genero un messaggio di richiesta da parte del browser
-var archive = prompt("Please, enter your email.");
+var question = prompt("Please, enter your email.");
 
-// imposto le condizioni in base all'input dell'utente
-if (archive == "") {
-  document.getElementById("nomail").innerHTML = "You haven't entered your email.";
-} else if (archive == (email[0], email[1], email[2], email[3], email[4], email[5])) {
-    document.getElementById("got").innerHTML = "Your email's registered in the archive.";
+
+
+
+var emailTrovata = false
+
+for (var i = 0; i < archive.length; i++) {
+  if (question == archive[i]) {
+    emailTrovata = true;
+  }
+}
+
+if (emailTrovata == true) {
+  document.getElementById('result').innerHTML = "La tua mail è registrata nei nostri archivi."
 } else {
-  document.getElementById("dont").innerHTML = "Your email isn't registered in the archive.";
+  document.getElementById('result').innerHTML = "La tua mail non è registrata nei nostri archivi."
 }
